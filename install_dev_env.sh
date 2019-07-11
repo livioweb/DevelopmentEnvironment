@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
+sudo apt update
 
+#install php
+sudo apt-get install php
 
 #install version code GIT
 sudo apt install git
@@ -11,12 +14,27 @@ sudo apt install vim
 sudo apt install libkf5globalaccel-bin
 sudo apt install yakuake
 
+#Install DK - DocKer Manager
+
+wget https://raw.githubusercontent.com/livioweb/dk_docker_manager/master/dk
+sudo chmod +x dk
+sudo mv dk /bin/dk
+
+
 #Install IDE VSCODE
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 sudo apt-get update
 sudo apt-get install code
+
+#Install composer
+sudo curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+
+sudo apt-get install zsh
+sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 
 
 # https://docs.docker.com/install/linux/docker-ce/ubuntu/
@@ -40,6 +58,3 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 
 
-#Install DK - DocKer Manager
-wget https://github.com/livioweb/dk_docker_manager/blob/master/dk
-sudo mv dk /bin/dk
