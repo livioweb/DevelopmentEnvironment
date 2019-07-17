@@ -2,17 +2,17 @@
 sudo apt update
 
 #install php
-sudo apt-get install php
+sudo apt-get -y install php
 
 #install version code GIT
-sudo apt install git
+sudo apt -y install git
 
 #install textEditCode VIM
-sudo apt install vim
+sudo apt -y install vim
 
 #install term yakuake 
-sudo apt install libkf5globalaccel-bin
-sudo apt install yakuake
+sudo apt -y install libkf5globalaccel-bin
+sudo apt -y install yakuake
 
 #Install DK - DocKer Manager
 
@@ -42,29 +42,24 @@ curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microso
 sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 sudo apt-get update
-sudo apt-get install code
+sudo apt-get -y  install code
 
 #Install composer
 sudo curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-
-sudo apt-get install zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-zsh
-sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-
 sudo chmod +x /usr/local/bin/docker-compose
 
+#Install docker-composer
+sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
 # https://docs.docker.com/install/linux/docker-ce/ubuntu/
 sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
 sudo apt-get update
-sudo apt-get install docker-ce
+sudo apt-get install -y  docker-ce
 
 # https://docs.docker.com/compose/install/
-sudo curl -L https://github.com/docker/compose/releases/download/1.20.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo curl -L https://github.com/docker/compose/releases/download/1.24.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
 # https://docs.docker.com/install/linux/linux-postinstall/
@@ -72,5 +67,8 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 su - $USER  
 
+sudo apt-get install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+zsh
 
 
