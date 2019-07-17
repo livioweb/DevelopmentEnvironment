@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+#Livio Rodrigues
+#Versao 1.0.1
 sudo apt update
 
 #install php
