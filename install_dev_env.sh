@@ -1,20 +1,20 @@
 #!/usr/bin/env bash
 #Livio Rodrigues
 #Versao 1.0.1
-sudo apt update
+sudo apt-get update
 
 #install php
-sudo apt -y install php
+sudo apt-get -y install php
 
 #install version code GIT
-sudo apt -y install git
+sudo apt-get -y install git
 
 #install textEditCode VIM
-sudo apt -y install vim
+sudo apt-get -y install vim
 
 #install term yakuake 
-sudo apt -y install libkf5globalaccel-bin
-sudo apt -y install yakuake
+sudo apt-get -y install libkf5globalaccel-bin
+sudo apt-get -y install yakuake
 
 #Install DK - DocKer Manager
 wget https://raw.githubusercontent.com/livioweb/dk_docker_manager/master/dk
@@ -42,8 +42,8 @@ EOL
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-sudo apt update
-sudo apt -y  install code
+sudo apt-get update
+sudo apt-get -y  install code
 
 #Install composer
 sudo curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
